@@ -7,7 +7,7 @@ fit_generator()函数就是解决训练集过大，无法一次性放入内容�
 
 ValueError: Error when checking target: expected activation_6 to have shape (2,) but got array with shape (1,)
 3、设定batch_size，每次读取batch_size大小的图片之后，将图片和标签返回给模型
-
+自己在当前目录下创建三个如下文件
 path.txt是整个猫狗数据集文件，
 path_train.txt是训练集文件，
 path_test.txt是测试集文件

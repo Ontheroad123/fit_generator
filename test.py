@@ -24,7 +24,7 @@ def endwith(s,*endstring):
 
 #将训练集图片地址全部写入txt文件中
 def write_imgpath():
-    path="/home/hq/desktop/cat_dog/c-d-data/train"
+    path="./train"
     fp = open('path.txt', 'w')
     for file in os.listdir(path):
         file_path = os.path.join(path, file)
@@ -186,12 +186,12 @@ def build_model():
 model = VGG_16()
 sgd = SGD(lr=0.000001,decay=1e-6,momentum=0.9,nesterov=True)
 model.compile(optimizer=sgd,  loss='squared_hinge',  metrics=['accuracy'])
-#epoch=n*steps_per_epoch*batch_size,自己理解的这样，在设置batch_size和steps的时候注意
-model.fit_generator(generator_data(32, "/home/hq/desktop/cat_dog/path_train.txt"),
-                    steps_per_epoch=20,
+
+model.fit_generator(generator_data(32, "./path_train.txt"),
+                    steps_per_epoch=20,#一次epoch训练多少张图片
                     epochs=10
                     )
-loss ,accuracy= model.evaluate_generator(generator_data(32, "/home/hq/desktop/cat_dog/path_test.txt"), steps=20)
+loss ,accuracy= model.evaluate_generator(generator_data(32, "./path_test.txt"), steps=20)一次epoch测试多少张图片
 print("loss is :",loss)
 print("accuracy is :",accuracy)
 

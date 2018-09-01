@@ -11,4 +11,4 @@ ValueError: Error when checking target: expected activation_6 to have shape (2,)
 path.txt是整个猫狗数据集文件，
 path_train.txt是训练集文件，
 path_test.txt是测试集文件
-fit_generator-vgg2D.py是使用fit_generator()训练（VGG 2D模型）
+test.py是使用fit_generator()训练（VGG 2D模型）
